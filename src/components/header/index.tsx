@@ -44,7 +44,7 @@ export const Header: React.FC = (props: any) => {
             <Col>
 
               {links.map((link: any) => (
-                <Link link />
+                <Link meta={link} />
               ))}
 
               <Button size="large" style={{
@@ -53,6 +53,7 @@ export const Header: React.FC = (props: any) => {
                 backgroundColor: colors.highlight,
                 border: 'solid 0px rgba(0,0,0,0)'
               }}><b>GET STARTED</b></Button>
+              
             </Col>
           </Row>
 
@@ -70,14 +71,14 @@ export const Header: React.FC = (props: any) => {
 
         <Row justify="center">
           <Col>
-            <Button size="large" style={{
+            <Button size="large" className="" style={{
             borderRadius: '5px',
             marginTop: '15px',
-            transform: 'scale(1.2)',
+            transform: 'scale(1.35)',
             color: colors.primary,
             backgroundColor: colors.highlight,
             border: 'solid 0px rgba(0,0,0,0)',
-            }}><b style={{fontSize: '.85em'}}>EXPLORE OUR DATA</b></Button>
+            }}><b style={{fontSize: '.7em', letterSpacing: '1px'}}>EXPLORE OUR DATA</b></Button>
           </Col>
         </Row>
 

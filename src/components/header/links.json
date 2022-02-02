@@ -5,12 +5,12 @@
         "hasSubLinks": false
     },
     {
-        "text": "about",
+        "text": "science",
         "path": "",
         "hasSubLinks": false
     },
     {
-        "text": "about",
+        "text": "covid-19",
         "path": "",
         "hasSubLinks": true,
         "subLinks": [
@@ -21,17 +21,22 @@
         ]
     },
     {
-        "text": "about",
+        "text": "newsroom",
         "path": "",
         "hasSubLinks": false
     },
     {
-        "text": "about",
+        "text": "blog",
         "path": "",
         "hasSubLinks": false
     },
     {
-        "text": "about",
+        "text": "data",
+        "path": "",
+        "hasSubLinks": false
+    },
+    {
+        "text": "careers",
         "path": "",
         "hasSubLinks": false
     }
