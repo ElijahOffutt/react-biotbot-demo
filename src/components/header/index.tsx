@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Button } from 'antd';
-import Link from './link'
+import NavLink from './link';
+import content from '@public/content.json';
 
 export const Header: React.FC = (props: any) => {
   let colors = require('@public/colors.json');
@@ -21,7 +22,7 @@ export const Header: React.FC = (props: any) => {
         </b>
       </div>
 
-      <header style={{ height: '97.5vh', position: 'relative', overflow: 'hidden', paddingTop: '20px' }}>
+      <header style={{ height: props.short ? '40vh' : '97.5vh', position: 'relative', overflow: 'hidden', paddingTop: '20px' }}>
 
         <video style={{
           position: 'absolute',
@@ -44,7 +45,7 @@ export const Header: React.FC = (props: any) => {
             <Col>
 
               {links.map((link: any) => (
-                <Link meta={link} />
+                <NavLink meta={link} />
               ))}
 
               <Button size="large" style={{
@@ -53,7 +54,7 @@ export const Header: React.FC = (props: any) => {
                 backgroundColor: colors.highlight,
                 border: 'solid 0px rgba(0,0,0,0)'
               }}><b>GET STARTED</b></Button>
-              
+
             </Col>
           </Row>
 
@@ -61,15 +62,16 @@ export const Header: React.FC = (props: any) => {
 
         <h1
           style={{
+            fontFamily: content.font,
             color: 'white',
             textAlign: 'center',
-            fontSize: '4em',
+            fontSize: props.short ? '3em' : '4em',
             lineHeight: '1em',
-            marginTop: '20vh'
+            marginTop: props.short ? '5vh' : '20vh'
           }}
         >Population health analytics<br />powered by sewage</h1>
 
-        <Row justify="center">
+        { !props.short && <Row justify="center">
           <Col>
             <Button size="large" className="" style={{
             borderRadius: '5px',
@@ -80,7 +82,7 @@ export const Header: React.FC = (props: any) => {
             border: 'solid 0px rgba(0,0,0,0)',
             }}><b style={{fontSize: '.7em', letterSpacing: '1px'}}>EXPLORE OUR DATA</b></Button>
           </Col>
-        </Row>
+        </Row>}
 
         <img
           style={{

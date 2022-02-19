@@ -1,0 +1,30 @@
+.analysis{
+    background-image: url("https://biobot.io/wp-content/themes/biobot/assets/img/banner-covid-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 80px 50px 40px;
+    align-items: center;
+    overflow: visible;
+    color: white;
+    position: relative;
+    h2, p, h3 { position: relative; z-index: 1; }
+    h2{
+        font-size: 3em;
+        color: white;
+        line-height: .8em;
+    }
+    h3{
+        line-height: 1em;
+        color: white;
+        font-size: 1.35em;
+    }
+    p{
+        width: 75%;
+        font-size: 1.15em;
+    }
+    img{ position: absolute; float: left; z-index: 0; }
+    img:first-of-type{ top: -40%; left: 65%; }
+    img:last-of-type{ bottom: 0; left: 35%; }
+}

@@ -1,41 +1,31 @@
 import React from "react";
+import Link from 'next/link';
+import style from './index.module.scss';
+import content from '@public/content.json';
 
-import styles from './index.module.scss'
-
-export default function Link(props: any) {
+export default function NavLink(props: any) {
     return (
         <>
-            { props.meta.hasLinks ? 
+            { props.meta.hasSubLinks ? 
                 (
-                    <div className={`${styles.Link}`} style={{
-                        cursor: 'pointer',
-                        float: 'left', 
-                        marginRight: '40px',
-                        color: 'white',
-                        textTransform: 'uppercase',
-                        lineHeight: '40px',
-                        position: 'relative',
-                        fontSize: '.9em'}}>
-                        <b>{props.meta.text} &#8964;</b>
-                        <ul>
-                            {props.meta.links.map( (link: any) => (
-                                <li>{link.text}</li>
-                            ))}
-                        </ul>
-                    </div>
+                    <Link href={props.meta.path}>
+                        <a style={{fontFamily: content.font}} className={`${style.navLink} ${props.current && style.current}`}>
+                            <b>{props.meta.text} &#129079;</b>
+                            <ul>
+                                {props.meta.subLinks.map( (link: any) => (
+                                    <li>{link.text}</li>
+                                ))}
+                            </ul>
+                        </a>
+                    </Link>
                 )
                 :
                 (
-                    <div className={`${styles.Link}`} style={{
-                        cursor: 'pointer',
-                        float: 'left', 
-                        marginRight: '40px',
-                        color: 'white',
-                        textTransform: 'uppercase',
-                        lineHeight: '40px',
-                        fontSize: '.9em'}}>
-                        <b>{props.meta.text}</b>
-                    </div>
+                    <Link href={props.meta.path}>
+                        <a style={{fontFamily: content.font}} className={`${style.navLink} ${props.current && style.current}`}>
+                            <b>{props.meta.text}</b>
+                        </a>
+                    </Link>
                 )
             }
         </>
